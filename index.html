@@ -11,6 +11,16 @@
     <!-- Loading Flat UI -->
     <link href="./css/flat-ui.min.css" rel="stylesheet">
 
+    <!-- Loading custom CSS styles -->
+    <link rel="stylesheet" type="text/css" href="./css/misc-style.css">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
     <link rel="shortcut icon" href="img/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -21,10 +31,10 @@
   </head>
   <body id="page-top" class="index">
   <!-- Navbar -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-embossed navbar-fixed-top affix" data-spy="affix" role="navigation">
     <div class="container">
-      <div class="navbar-header page-scroll">
                 <!-- Brand and navbar toggle grouped together for mobile compatibility -->
+                <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -33,39 +43,59 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">BackIn5</a>
             </div>
+
              <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#mission">Sign in</a>
+                        <a class="page-scroll" href="#sign-in">Sign in</a>
                     </li>
-                    <!-- <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li> -->
+
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#sign-out">Sign out</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Get Involved</a>
+                        <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#tour">Tour</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
     </div>
   </nav>
+  <!-- /.nav -->
   
-    <div class="container">
-        <h1>Welcome to BackIn5</h1>
-        <h3>A simpler way to sign in and out when going off campus.</h3>
+        <!-- Header -->
+        <div class="header-fixed-top"></div>
+        <header class="shadow">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Welcome to BackIn5</div>
+                    <div class="intro-heading">A simpler way to sign in and out when going off campus.</div>
+                    <a href="#tour" class="page-scroll btn btn-inverse btn-xl">Take a Tour</a>
+                </div>
+            </div>
+        </header>
+        <!-- /.header -->
+
+       <!-- <div class="container">
+            <h1>Welcome to BackIn5</h1>
+            <h3>A simpler way to sign in and out when going off campus.</h3>
+        </div>-->
+        
     </div>
     <!-- /.container -->
-
+    <br>
+    <div class="container page">
+        <div id="signin">
+            <div id="signin-form"></div>
+        </div>
+    </div>
 
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
     <script src="./js/vendor/jquery.min.js"></script>
