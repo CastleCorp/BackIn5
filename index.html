@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>SAS: BackIn5</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Loading Bootstrap -->
     <link href="./css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +14,8 @@
 
     <!-- Loading custom CSS styles -->
     <link rel="stylesheet" type="text/css" href="./css/misc-style.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/vendor/junior.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="./css/lib/ratchet.css">-->
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -72,7 +75,7 @@
   
         <!-- Header -->
         <div class="header-fixed-top"></div>
-        <header class="shadow">
+        <header>
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-lead-in">Welcome to BackIn5</div>
@@ -82,26 +85,38 @@
             </div>
         </header>
         <!-- /.header -->
-
-       <!-- <div class="container">
-            <h1>Welcome to BackIn5</h1>
-            <h3>A simpler way to sign in and out when going off campus.</h3>
-        </div>-->
         
     </div>
     <!-- /.container -->
     <br>
-    <div class="container page">
-        <div id="signin">
-            <div id="signin-form"></div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary" id="sign-in">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Sign in</h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                </div>
+                <div class="panel-body">
+                    <div class="container" id="sign-in-form">
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
     <script src="./js/vendor/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./js/vendor/video.js"></script>
     <script src="./js/flat-ui.min.js"></script>
-
+    <script type="text/javascript" src="./js/panel.js"></script>
+    <script type="text/javascript" src="./js/vendor/junior.js"></script>
+    <script type="text/javascript" src="./js/lib/backbone-min.js"></script>
+    <script type="text/javascript" src="./js/lib/lodash.min.js"></script>
+    <script type="text/javascript" src="./js/lib/modernizr.custom.15848.js"></script>
+    <script type="text/javascript" src="./js/lib/zepto.flickable.min.js"></script>
+    <script type="text/javascript" src="./js/lib/zepto.min.js"></script>
   </body>
 </html>
