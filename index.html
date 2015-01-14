@@ -30,6 +30,13 @@
         <!-- Setup tour -->
         <script type="text/javascript" src="./js/setup_tour.js"></script>
 
+        <!-- Initialize Parse -->
+        <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+        <script type="text/javascript">
+        Parse.initialize("DsiDdw3Kv6mfRElMo19ZS0GVY8ZmJUXiSK54PkfT", "7sfLjpcTfKte6H2bprtNVCVsavifeI7EyH1ZSGyz");
+        </script>
+        <script type="text/javascript" src="./js/parse/SignOut.js"></script>
+
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
         <!--[if lt IE 9]>
           <script src="js/vendor/html5shiv.js"></script>
@@ -82,7 +89,7 @@
         <header>
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in tour-welcome" id="tour-1">Welcome to BackIn5</div>
+                    <div class="intro-lead-in tour-welcome" id="tour-1"><b>Welcome to BackIn5</b></div>
                     <div class="intro-heading">A simpler way to sign in and out when going off campus.</div>
                     <a onclick="tour.start(true)" href="#tour" class="page-scroll btn btn-inverse btn-xl">Take a Tour</a>
                 </div>
@@ -97,6 +104,7 @@
     <!-- Sign out form -->
     <section id="sign-out">
         <br>
+        <br>
         <div class="container" style="padding-top:30px;">
             <div class="row">
                 <div class="col-md-14">
@@ -110,39 +118,39 @@
                                 <div class="container">
                                     <div class="row" style="padding:7px;">
                                         <div class="col-lg-12">
-                                            <form name="sign-out-form" id="signoutForm" novalidate>
+                                            <form name="sign-out-form" id="signoutForm" onsubmit="signOutUser($('#outname').val(), $('#outemail').val(), $('#outphone').val(), $('#outdestination').val(), $('#outdepart').val(), $('#outreturn').val());" validate>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="name">Name:</label>
-                                                            <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                                            <input type="text" class="form-control" placeholder="Your Name *" id="outname" required data-validation-required-message="Please enter your name.">
                                                             <p class="help-block text-danger"></p>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="email">Email:</label>
-                                                            <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                                            <input type="email" class="form-control" placeholder="Your Email *" id="outemail" required data-validation-required-message="Please enter your email address.">
                                                             <p class="help-block text-danger"></p>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="phone">Phone:</label>
-                                                            <input type="phone" class="form-control" placeholder="Your Phone Number *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                                            <input type="phone" class="form-control" placeholder="Your Phone Number *" id="outphone" required data-validation-required-message="Please enter your phone number.">
                                                             <p class="help-block text-danger"></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="depart">Departure Time:</label>
-                                                            <input type="time" class="form-control" placeholder="Your departure time *" id="depart" required data-validation-required-message="Please enter your departure time.">
+                                                            <input type="time" class="form-control" placeholder="Your departure time *" id="outdepart" required data-validation-required-message="Please enter your departure time.">
                                                             <p class="help-block text-danger"></p> 
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="destination">Destination:</label>
-                                                            <input type="text" class="form-control" placeholder="Your destination *" id="destination" required data-validation-required-message="Please enter your destination.">
+                                                            <input type="text" class="form-control" placeholder="Your destination *" id="outdestination" required data-validation-required-message="Please enter your destination.">
                                                             <p class="help-block text-danger"></p>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="return">Estimated Return Time:</label>
-                                                            <input type="time" class="form-control" placeholder="Your return time *" id="return" required data-validation-required-message="Please enter your return time.">
+                                                            <input type="time" class="form-control" placeholder="Your return time *" id="outreturn" required data-validation-required-message="Please enter your return time.">
                                                             <p class="help-block text-danger"></p>
                                                         </div>
                                                     </div>
@@ -212,6 +220,9 @@
                     <!-- /.sign in form -->
                 </section>
                 <!-- /.section -->
+                <br>
+                <br>
+                <br>
 
                 <footer id="footer">
                     <div class="container">
@@ -230,19 +241,19 @@
 
                                     <button class="btn btn-primary btn-xl center" style="margin-left:20px;"><a class="center" href="https://linkedin.com/in/parkerthomas1"style="display: block;"><i class="fa fa-linkedin fa-3x pull-left" style="color:white; padding-right:10px;"></i><p style="color:white; padding-right:50px;" class="center">Parker Thomas<br> On LinkedIn</p></a></button>
 
-                                        </p>
+                                </p>
 
-                                        <br>
-                                        <br>
-                                        <br>
+                                <br>
+                                <br>
+                                <br>
 
-                                        <p class="pvl">This site was made for use by St. Andrews School (DE) students. It was created by a student is completely opensource. You are encouraged to build off of this work, the only stipulation being that you link back to the <a href="http://github.com/castlecorp/BackIn5/">Github project</a>.</p>
+                                <p class="pvl">This site was made for use by St. Andrews School (DE) students. It was created by a student is completely opensource. You are encouraged to build off of this work, the only stipulation being that you link back to the <a href="http://github.com/castlecorp/BackIn5/">Github project</a>.</p>
 
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <p></p>
-                                        <p class="pvl copyright">BackIn5 by Parker Thomas, &copy; 2015</p>
+                                <br>
+                                <br>
+                                <br>
+                                <p></p>
+                                <p class="pvl copyright">BackIn5 by Parker Thomas, &copy; 2015</p>
                             </div>
 
                             <div class="col-xs-5">
@@ -261,23 +272,41 @@
                     </div>
                 </footer>
 
-                        <!-- Include all compiled plugins (below), or include individual files as needed -->
-                        <script src="./js/vendor/video.js"></script>
-                        <script src="./js/flat-ui.min.js"></script>
-                        <script type="text/javascript" src="./js/panel.js"></script>
-                        <script type="text/javascript" src="./js/lib/modernizr.custom.15848.js"></script>
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="./js/vendor/video.js"></script>
+                <script src="./js/flat-ui.min.js"></script>
+                <script type="text/javascript" src="./js/panel.js"></script>
+                <script type="text/javascript" src="./js/lib/modernizr.custom.15848.js"></script>
 
-                        <script type="text/javascript">
-                        function open_sign_in() {
-                            $('#sign-in-heading').click();
-                        };
-                        </script>
+                <script type="text/javascript">
+                function open_sign_in() {
+                    $('#sign-in-heading').click();
+                };
+                </script>
 
-                        <script type="text/javascript">
-                        function open_sign_out() {
-                            $('#sign-out-heading').click();
-                        };
-                        </script>
+                <script type="text/javascript">
+                function open_sign_out() {
+                    $('#sign-out-heading').click();
+                };
+                </script>
 
-</body>
-</html>
+                <script type="text/javascript">
+                    function passSignOut()
+                    {
+                        var signOutArray = $('#signoutForm').serializeArray();
+                        var name = signOutArray[0];
+                        var email = signOutArray[1];
+                        var phone = signOutArray[2];
+                        var departTime = signOutArray[3];
+                        var returnTime = signOutArray[5];
+                        var destination = signOutArray[4];
+
+                        var result = name + ', ' + email + ', ' + phone + ', ' + destination + ', ' + departTime + ', ' + returnTime;
+
+                        return result;
+                    }
+                </script>
+
+
+            </body>
+            </html>
