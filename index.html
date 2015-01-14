@@ -37,6 +37,25 @@
         </script>
         <script type="text/javascript" src="./js/parse/SignOut.js"></script>
 
+
+         <script type="text/javascript">
+                $(function() {
+                  $('a[href*=#]:not([href=#])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                      var target = $(this.hash);
+                      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                      if (target.length) {
+                        $('html,body').animate({
+                          scrollTop: target.offset().top
+                      }, 1000);
+                        return false;
+                    }
+                }
+            });
+              });
+                </script>
+
+
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
         <!--[if lt IE 9]>
           <script src="js/vendor/html5shiv.js"></script>
@@ -291,22 +310,21 @@
                 </script>
 
                 <script type="text/javascript">
-                    function passSignOut()
-                    {
-                        var signOutArray = $('#signoutForm').serializeArray();
-                        var name = signOutArray[0];
-                        var email = signOutArray[1];
-                        var phone = signOutArray[2];
-                        var departTime = signOutArray[3];
-                        var returnTime = signOutArray[5];
-                        var destination = signOutArray[4];
+                function passSignOut()
+                {
+                    var signOutArray = $('#signoutForm').serializeArray();
+                    var name = signOutArray[0];
+                    var email = signOutArray[1];
+                    var phone = signOutArray[2];
+                    var departTime = signOutArray[3];
+                    var returnTime = signOutArray[5];
+                    var destination = signOutArray[4];
 
-                        var result = name + ', ' + email + ', ' + phone + ', ' + destination + ', ' + departTime + ', ' + returnTime;
+                    var result = name + ', ' + email + ', ' + phone + ', ' + destination + ', ' + departTime + ', ' + returnTime;
 
-                        return result;
-                    }
+                    return result;
+                }
                 </script>
-
 
             </body>
             </html>

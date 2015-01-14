@@ -2,16 +2,15 @@ header {
     text-align: center;
     color: white;
     background-attachment: fixed;
-   background-image: url('./img/cloister.jpg');
-   background-color: rgba(128, 128, 128, 0.08);
+    background-image: url('./img/cloister.jpg');
+    background-color: rgba(128, 128, 128, 0.08);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    padding-bottom: 160px;
-    
+    padding-bottom: 160px; 
 }
 
 header .intro-text {
@@ -72,9 +71,9 @@ header .intro-text .intro-heading {
 }
 
 .shadow {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+ -moz-box-shadow:    inset 0 0 10px #000000;
+ -webkit-box-shadow: inset 0 0 10px #000000;
+ box-shadow:         inset 0 0 10px #000000;
 }
 
 .header-fixed-top {
@@ -89,12 +88,12 @@ header .intro-text .intro-heading {
 
 img.blur { 
     width:367;
- height:459px;
-  -webkit-filter: blur(3px);
- -moz-filter: blur(3px);
--o-filter: blur(3px); 
--ms-filter: blur(3px); 
-filter: blur(3px); 
+    height:459px;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px); 
+    -ms-filter: blur(3px); 
+    filter: blur(3px); 
 }
 
 .clickable
@@ -120,13 +119,13 @@ a.clickable { color: inherit; }
 a.clickable:hover { text-decoration:none; }
 
 .wrap {
-        position:relative;
-        margin:0 auto;
-               /*replace 900px with your width*/
-        width:900px;
-    }
+    position:relative;
+    margin:0 auto;
+    /*replace 900px with your width*/
+    width:900px;
+}
 
-    #header, #footer {
-        width:100%;
-        float:left;
-    }
+#header, #footer {
+    width:100%;
+    float:left;
+}
