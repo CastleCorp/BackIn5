@@ -21,6 +21,11 @@
     <!-- Loading moment.js -->
     <script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
 
+    <!-- Loading shepherd.js, shepherd theme and dependencies -->
+    <script type="text/javascript" src="./js/vendor/tether.js"></script>
+    <script type="text/javascript" src="./js/vendor/shepherd.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/vendor/shepherd-theme-arrows.css">
+
 
     <!-- Custom Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -68,7 +73,7 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#tour">Tour</a>
+                        <a class="page-scroll" href="#" onclick="new_tour()">Tour</a>
                     </li>
                 </ul>
             </div>
@@ -82,17 +87,18 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome to BackIn5</div>
+                <div class="intro-lead-in tour-welcome">Welcome to BackIn5</div>
                 <div class="intro-heading">A simpler way to sign in and out when going off campus.</div>
-                <a href="#tour" class="page-scroll btn btn-inverse btn-xl">Take a Tour</a>
+                <a onclick="new_tour()" href="#" class="page-scroll btn btn-inverse btn-xl">Take a Tour</a>
             </div>
         </div>
     </header>
     <!-- /.header -->
 
 </div>
-<!-- /.container -->
 
+<!-- /.container -->
+<div class="container tour-welcome"></div>
 <!-- Sign out form -->
 <section id="sign-out">
 <br>
@@ -100,7 +106,7 @@
     <div class="row">
         <div class="col-md-14">
             <div class="panel panel-primary">
-                <div class="panel-heading clickable" id="sign-out-heading">
+                <div class="panel-heading clickable tour-out" id="sign-out-heading">
                     <h3 class="panel-title">
                         Sign out</h3>
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
@@ -148,7 +154,7 @@
                                             <div class="clearfix"></div>
                                             <div class="col-lg-12 text-center">
                                                 <div id="success"></div>
-                                                <button type="submit" id="send" class="btn btn-xl btn-inverse">Submit</button>
+                                                <button type="submit" id="send" class="btn btn-xl btn-inverse tour-out-form">Submit</button>
                                             </div>
                                         </div>
                                     </form>
@@ -161,7 +167,6 @@
         </div>
     </div>
     <!-- /.sign out form -->
-
     <!-- Sign in form -->
 <section id="sign-in">
 <br>
@@ -169,7 +174,7 @@
     <div class="row">
         <div class="col-md-14">
             <div class="panel panel-success">
-                <div class="panel-heading clickable" id="sign-in-heading">
+                <div class="panel-heading clickable tour-in" id="sign-in-heading">
                     <h3 class="panel-title">
                         Sign in</h3>
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
@@ -251,6 +256,108 @@
             <script type="text/javascript">
                 function open_sign_out() {
                     $('#sign-out-heading').click();
+                };
+            </script>
+
+            <script type="text/javascript">
+                function new_tour() {
+                    (function() {
+  var init, setupShepherd;
+
+  init = function() {
+    return setupShepherd();
+  };
+
+  setupShepherd = function() {
+    var shepherd;
+    shepherd = new Shepherd.Tour({
+      defaults: {
+        classes: 'shepherd-element shepherd-open shepherd-theme-arrows',
+        showCancelLink: true
+      }
+    });
+    shepherd.addStep('welcome', {
+      text: ['Welcome to the BackIn5 tour. Walk through the steps to learn all about how best to use this site. When you are ready to go to the next part of the tour, click the \'Next\' button, or if you would like to end the tour, click \'Exit\'. Ready to move on?'],
+      attachTo: '.tour-welcome',
+      classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+      buttons: [
+        {
+          text: 'Exit',
+          classes: 'shepherd-button-secondary',
+          action: shepherd.cancel
+        }, {
+          text: 'Next',
+          action: shepherd.next,
+          classes: 'shepherd-button-example-primary'
+        }
+      ]
+    });
+    shepherd.addStep('sign-out', {
+      title: 'Signing out',
+      text: 'To sign out when you are going off-campus, simply click on the blue bar labeled \'Sign Out\' and you will see a form appear.',
+      attachTo: '.tour-out bottom',
+      buttons: [
+        {
+          text: 'Back',
+          classes: 'shepherd-button-secondary',
+          action: shepherd.back
+        }, {
+          text: 'Next',
+          action: shepherd.next
+        }
+      ]
+    });
+    shepherd.addStep('sign-out-form', {
+      title: 'The Sign Out Form',
+      text: 'All you need to do is fill out this form and click \'Submit\'. If everything works properly, you should receive a text message confirming your departure.',
+      attachTo: '.tour-out-form bottom',
+      buttons: [
+        {
+          text: 'Back',
+          classes: 'shepherd-button-secondary',
+          action: shepherd.back
+        }, {
+          text: 'Next',
+          action: shepherd.next
+        }
+      ]
+    });
+    shepherd.addStep('sign-in', {
+      title: 'Signing In',
+      text: 'When you get back to campus, just click on the green bar labeled \'Sign In\', fill out the form and click submit, just like signing out. ',
+      attachTo: '.tour-in bottom',
+      buttons: [
+        {
+          text: 'Back',
+          classes: 'shepherd-button-secondary',
+          action: shepherd.back
+        }, {
+          text: 'Next',
+          action: shepherd.next
+        }
+      ]
+    });
+    shepherd.addStep('finish', {
+      title: 'That\'s it!',
+      text: 'Thanks for taking a look at the tour. I hope you find BackIn5 useful!',
+      attachTo: '',
+      buttons: [
+        {
+          text: 'Back',
+          classes: 'shepherd-button-secondary',
+          action: shepherd.back
+        }, {
+          text: 'Done',
+          action: shepherd.next
+        }
+      ]
+    });    
+    return shepherd.start();
+  };
+
+  $(init);
+
+}).call(this);
                 };
             </script>
             
