@@ -25,4 +25,24 @@ function signOutUser(user_name, user_email, user_phone, user_destination, user_d
 			alert("Uh oh, something went wrong! \n" + error.message);
 		}
 	});
+
+	var offCampus = new Parse.Object("OffCampus");
+
+	offCampus.set("name", name);
+	offCampus.set("parent", signOut); 
+
+	signOut.save(null, {
+		success: function(SignOut) {},
+		error: function(SignOut, error) {}
+	});
+
+	offCampus.save(null, {
+		success: function(offCampus) {
+
+		},
+		error: function(offCampus, error) {
+			alert("Uh oh, something went wrong! \n" + error.message);
+		}
+	});
+
 };
