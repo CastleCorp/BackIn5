@@ -31,8 +31,6 @@
         <script type="text/javascript" src="./js/setup_tour.js"></script>
 
         <!-- Load RequireJS -->
-        <script type="text/javascript" src="./js/require.js"></script>
-        <script type="text/javascript" src="./js/twilio.js"></script>
         <script type="text/javascript" src="./js/pushBullet.js">push();</script>
 
         <!-- Initialize Parse -->
@@ -42,7 +40,11 @@
         </script>
         <script type="text/javascript" src="./js/parse/SignOut.js"></script>
         <script type="text/javascript" src="./js/parse/SignIn.js"></script>
-        <!--<script type="text/javascript" data-main="./js/parse/SendTxt.js" src="./js/require.js"></script>-->
+
+        <script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+        <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+        <script type="text/javascript" data-main="./js/lib/twilio.js" src="./js/require.js"></script>
+        <script type="text/javascript" data-main="./js/parse/SendTxt.js" src="./js/require.js"></script>
 
 
 
