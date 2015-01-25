@@ -1,4 +1,4 @@
-function push(number, body) {
+function pushbullet(number, body) {
 
 var API_KEY = "JMvrjX4FdSiWjqGRVFO0w3O5wj2dr1Qs";
 var TARGET_EMAIL = "sasbackin5@gmail.com";
