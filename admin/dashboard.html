@@ -8,25 +8,63 @@
 
       <!-- Loading Bootstrap -->
       <link href="/css/vendor/bootstrap.min.css" rel="stylesheet">
-      <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
-      <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
-
       <!-- Loading Flat UI -->
-      <link href="/css/flat-ui.min.css" rel="stylesheet">
+      <link href="../css/flat-ui.min.css" rel="stylesheet">
 
       <!-- Loading custom CSS styles -->
-      <link rel="stylesheet" type="text/css" href="/css/misc-style.css">
-      <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="../css/misc-style.css">
 
-      <link rel="shortcut icon" href="/img/favicon.ico">
+      <!-- Loading Font-Awesome -->
+      <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Load vendor JavaScript -->
+      <script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
+      <script type="text/javascript" src="../js/vendor/bootstrap.min.js"></script>
+      <script src="../js/flat-ui.min.js"></script>
+      <script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
+      <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+
+
+      <script type="text/javascript">  
+function tConvert (time) {
+   // Check correct time format and split into components
+   time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+    if (time.length > 1) { // If time format correct
+      time = time.slice (1);  // Remove full string match value
+      time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+      time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join (''); // return adjusted time or original string
+  };
+
+  function phoneFormat(phone) {
+    return formatted = '('+phone.substr(0, 3) + ') ' + phone.substr(3, 3) + '-' + phone.substr(6,4);
+  };
+  </script>
 
       <!-- Initialize Parse -->
-      <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
       <script type="text/javascript">
       Parse.initialize("DsiDdw3Kv6mfRElMo19ZS0GVY8ZmJUXiSK54PkfT", "7sfLjpcTfKte6H2bprtNVCVsavifeI7EyH1ZSGyz");
       </script>
-
-      <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+      <script type="text/javascript">
+                  var query = new Parse.Query("OffCampus");
+                  query.find({
+                    success: function(results) {
+                      for (var i = 0; i < results.length; i++) { 
+                        var object = results[i];
+                        var parent = object.get("parent");
+                        parent.fetch({
+                          success: function(post) {
+                            $('#table tr:last').after("<tr><td>"+object.get("name")+"</td> <td>"+tConvert(parent.get("returnTime"))+"</td> <td>"+parent.get("destination")+"</td><td>"+phoneFormat(parent.get("phone"))+"</td></tr>");
+                          }
+                        });
+                      }
+                    }
+                  });
+                </script>
 
       <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
         <!--[if lt IE 9]>
@@ -84,13 +122,28 @@
                 
                 <div class="col-md-offset-2 col-md-9 well row-align">
                 <h4>Teacher Dashboard</h4>
-                <p>Some text</p>
+                <p>See who's off campus, receive updates and view back logs.</p>
               </div>
 
             </div>
 
             <div class="row">
-              <div class="col-md-offset-2 col-md-9 well row-align"></div>
+              <div class="col-md-offset-2 col-md-9 row-align">
+                <table class="table table-striped table-condensed" id="table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Returning</th>
+                      <th>Destination</th>
+                      <th>Phone</th>
+                    </tr>
+                    <tbody>
+                      <tr>
+                      </tr>
+                    </tbody>
+                  </thead>
+                </table>
+              </div>
             </div>
 
               </div>
@@ -98,9 +151,10 @@
             </div>
           </div>
 
-          <script src="/js/flat-ui.min.js"></script>
-                <script type="text/javascript" src="/js/panel.js"></script>
-                <script type="text/javascript" src="/js/lib/modernizr.custom.15848.js"></script>
+          
+          <script type="text/javascript" src="../js/panel.js"></script>
+          <script type="text/javascript" src="../js/lib/modernizr.custom.15848.js"></script>
+                
 
         </body>
         </html>
