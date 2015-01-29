@@ -23,6 +23,7 @@
       <script src="../js/flat-ui.min.js"></script>
       <script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
       <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+      <script type="text/javascript" src="/js/logout.js"></script>
       
       <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -30,6 +31,12 @@
       <script type="text/javascript">
       Parse.initialize("DsiDdw3Kv6mfRElMo19ZS0GVY8ZmJUXiSK54PkfT", "7sfLjpcTfKte6H2bprtNVCVsavifeI7EyH1ZSGyz");
       </script>
+
+      <script type="text/javascript">
+          if(!Parse.User.current()){
+            window.location.replace('/admin/');
+          }
+          </script>
 
 </head>
 <body id="page-top" class="index">
@@ -42,7 +49,7 @@
                   <li><a href="/admin/updates.html" ><i class="fa fa-envelope"></i> Stay Updated  <span class="badge">Important</span></a></li>
                   <li><a href="/admin/log.html"><i class="fa fa-user"></i> Back Log</a></li>
                   <li class="divider"></li>
-                  <li><a href="#"><i class="fa fa-share"></i> Logout</a></li>
+                  <li><a href="#" onClick="logout();"><i class="fa fa-share"></i> Logout</a></li>
                 </ul>
               </nav>
             </div>
@@ -73,23 +80,65 @@
                 
                 <div class="col-md-offset-2 col-md-9 well row-align">
                 <h4>Updates</h4>
-                <p>Choose how you want to receive updates.</p>
+                <p>Choose the ways you want to receive updates.</p>
               </div>
 
             </div>
 
                   <br>
 
-                  <div class="col-md-offset-2 col-md-3 well" style="margin-left:235px; margin-right:10px;"></div>
-                  <div class="col-md-3 well" style="margin-left:20px;"></div>
-                  <div class="col-md-3 well" style="margin-left:20px;"></div>
+                  <div class="col-md-offset-2 col-md-3 well" style="margin-left:235px; margin-right:10px; height:auto;" id="rss-frame">
+                      <h4 align="left"><a title="Open RSS feed URL in new tab" target="tab" href="/rss/feed.xml">RSS Feed</a></h4>
+                      <div class="" id="rss-context">
+                        <p>Get updates via RSS feed using your favorite feed reader. Need an RSS reader? Check out <a href="//feedly.com">Feedly</a> for a free and easy to configure option. Click the heading link to go to the RSS feed (you'll need the link).</p>
+                        <p>Need help adding BackIn5 to Feedly? Take a look at <a href="//blog.feedly.com/2013/04/10/adding-new-feeds-to-your-feedly/">this blog post</a> for instructions.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-3 well" style="margin-left:20px; height:auto;" id="pushbullet-frame">
+                    <h4 align="left"><a title="Open Pushbullet channel link in new tab" target="tab" href="//pushbullet.com/channel?tag=bin5">Pushbullet Feed</a></h4>
+                    <div class="" id="pushbullet-context">
+                      <p>PushBullet is the same premise as an RSS feed, except it sends you push notifications every time there is an update. Use it across devices to get notifications instantly wherever you go. Signup for PushBullet <a href="https://www.pushbullet.com/">here</a>.</p>
+                       <p>Already have an account?</p>
+                      <a class="pushbullet-subscribe-widget" data-channel="bin5" data-widget="button" data-size="small"></a>
+<script type="text/javascript">(function(){var a=document.createElement('script');a.type='text/javascript';a.async=true;a.src='https://widget.pushbullet.com/embed.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);})();</script>
+                    </div>
+                  </div>
+                  <div class="col-md-3 well" style="margin-left:20px; height:auto;" id="emailSMS-frame">
+                    <h4 align="left"><a title="Nothing to see here; move along.">Email and SMS Updates</a></h4>
+                    <p>Email updates coming soon</p>
+                    <div class="" id="emailSMS-container">
+                      <div class="" id="email-signup">
+                        <form class="form-group" style="width:100%;" validate>
+                        <input class="form-control" style="width:100%; position:left;" type="email" placeholder="yourname@example.com" title="Your email address" required>
+                      </form>
+                      <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:-15px;">Subscribe</button>
+                      <p></p>
+                      </div>
+                      <p></p>
+                      <div class="" id="SMS-signup">
+                        <p></p>
+                        <p>SMS updates coming soon</p>
+                        <form class="form-group" style="width:100%; margin-top:10px;" validate>
+                          <input class="form-control" style="width:100%; position:left;" type="phone" placeholder="Phone" title="Your phone number" required>
+                        </form>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:-15px;">Subscribe</button>
+                      </div>
+                    </div>
+                    <div style="padding-bottom:10px;"></div>
+                  </div>
             </div>
           </div>
 
           
           <script type="text/javascript" src="../js/panel.js"></script>
           <script type="text/javascript" src="../js/lib/modernizr.custom.15848.js"></script>
-                
+          <script type="text/javascript">
+            function logoutUser() {
+              //Parse.User.logOut();
+              //var currentUser = Parse.User.current();
+              window.location.assign("/admin/index.html");
+            };
+          </script>
 
         </body>
 

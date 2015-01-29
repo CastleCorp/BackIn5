@@ -23,6 +23,9 @@
       <script src="../js/flat-ui.min.js"></script>
       <script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
       <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+
+      <!-- Load logout script -->
+      <script type="text/javascript" src="/js/logout.js"></script>
       
       <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -49,6 +52,13 @@ function tConvert (time) {
       <script type="text/javascript">
       Parse.initialize("DsiDdw3Kv6mfRElMo19ZS0GVY8ZmJUXiSK54PkfT", "7sfLjpcTfKte6H2bprtNVCVsavifeI7EyH1ZSGyz");
       </script>
+
+
+      <!-- Load logout script -->
+      <script type="text/javascript" src="/js/logout.js"></script>
+
+     <!-- <script type="text/javascript" src="/js/parse/retrieveObjects.js"></script> -->
+      <!--
       <script type="text/javascript">
                   var query = new Parse.Query("OffCampus");
                   query.find({
@@ -65,6 +75,7 @@ function tConvert (time) {
                     }
                   });
                 </script>
+            -->
 
       <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
         <!--[if lt IE 9]>
@@ -75,7 +86,7 @@ function tConvert (time) {
           <script type="text/javascript">
           if(!Parse.User.current()){
             window.location.replace('/admin/');
-          };
+          }
           </script>
 
           <style type="text/css">
@@ -99,7 +110,7 @@ function tConvert (time) {
                   <li><a href="/admin/updates.html" ><i class="fa fa-envelope"></i> Stay Updated  <span class="badge">Important</span></a></li>
                   <li><a href="/admin/log.html"><i class="fa fa-user"></i> Back Log</a></li>
                   <li class="divider"></li>
-                  <li><a href="#"><i class="fa fa-share"></i> Logout</a></li>
+                  <li><a href="#" onClick="logoutUser();"><i class="fa fa-share"></i> Logout</a></li>
                 </ul>
               </nav>
             </div>
@@ -121,8 +132,8 @@ function tConvert (time) {
                 <div class="row">
                 
                 <div class="col-md-offset-2 col-md-9 well row-align">
-                <h4>Teacher Dashboard</h4>
-                <p>See who's off campus, receive updates and view back logs.</p>
+                <h4>Backlogs</h4>
+                <p>Possibly coming soon. View records of signing in and out.</p>
               </div>
 
             </div>
@@ -132,7 +143,7 @@ function tConvert (time) {
                 <table class="table table-striped table-condensed" id="table">
                   <thead>
                     <tr>
-                      <th>Name</th>
+                      <th>Name</a></th>
                       <th>Returning</th>
                       <th>Destination</th>
                       <th>Phone</th>
