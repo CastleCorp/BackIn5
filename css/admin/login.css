@@ -1,6 +1,6 @@
 body
 {
-    background: url('/img/admin/5.png') fixed;
+    background: url('../../img/admin/5.png') fixed;
     background-position: 0px -50px;;
     background-size: cover;
     padding: 0;
