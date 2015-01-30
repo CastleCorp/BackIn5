@@ -7,7 +7,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
       <!-- Loading Bootstrap -->
-      <link href="/css/vendor/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/vendor/bootstrap.min.css" rel="stylesheet">
       <!-- Loading Flat UI -->
       <link href="../css/flat-ui.min.css" rel="stylesheet">
 
@@ -23,7 +23,7 @@
       <script src="../js/flat-ui.min.js"></script>
       <script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
       <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
-      <script type="text/javascript" src="/js/logout.js"></script>
+      <script type="text/javascript" src="../js/logout.js"></script>
       
       <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -34,7 +34,7 @@
 
       <script type="text/javascript">
           if(!Parse.User.current()){
-            window.location.replace('/admin/');
+            window.location.replace('../admin/index.html#noUser');
           }
           </script>
 
@@ -45,9 +45,9 @@
               <nav class="nav-sidebar">
                 <ul class="nav tabs"> 
                   <li class="nav-header" style="margin-left:15px;">  <b>Admin Menu</b></li>        
-                  <li><a href="/admin/dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
-                  <li><a href="/admin/updates.html" ><i class="fa fa-envelope"></i> Stay Updated  <span class="badge">Important</span></a></li>
-                  <li><a href="/admin/log.html"><i class="fa fa-user"></i> Back Log</a></li>
+                  <li><a href="../admin/dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                  <li><a href="../admin/updates.html" ><i class="fa fa-envelope"></i> Stay Updated  <span class="badge">Important</span></a></li>
+                  <li><a href="../admin/log.html"><i class="fa fa-user"></i> Back Log</a></li>
                   <li class="divider"></li>
                   <li><a href="#" onClick="logout();"><i class="fa fa-share"></i> Logout</a></li>
                 </ul>
@@ -136,7 +136,7 @@
             function logoutUser() {
               //Parse.User.logOut();
               //var currentUser = Parse.User.current();
-              window.location.assign("/admin/index.html");
+              window.location.assign("../admin/index.html");
             };
           </script>
 
