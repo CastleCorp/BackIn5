@@ -1,4 +1,4 @@
-function pushbullet(number, body) {
+function pushbulletSignOut(name, phone, destination, returning) {
 
 var API_KEY = "JMvrjX4FdSiWjqGRVFO0w3O5wj2dr1Qs";
 var TARGET_EMAIL = "sasbackin5@gmail.com";
@@ -15,7 +15,7 @@ $.ajax({
     type: "POST",
     headers: {"Authorization": "Bearer " + API_KEY},
     url: "https://api.pushbullet.com/v2/pushes",
-    channel_tag: "backin5",
+    channel_tag: "bin5",
     data: newPush
 });
 };
