@@ -1,0 +1,20 @@
+header{text-align:center;color:white;background-attachment:fixed;background-image:url('./img/cloister.jpg');background-color:rgba(128, 128, 128, 0.08);background-position:center center;background-repeat:none;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;padding-bottom:160px;}
+header .intro-text{padding-top:100px;padding-bottom:100px;color:white;}
+header .intro-text .intro-lead-in{margin-bottom:25px;font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:22px;line-height:22px;color:white;}
+header .intro-text .intro-heading{margin-bottom:25px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;line-height:15px;color:white;}
+@media(min-width:768px){header .intro-text{padding-top:200px;padding-bottom:150px;}
+header .intro-text .intro-lead-in{margin-bottom:25px;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:40px;line-height:40px;color:white;}
+header .intro-text .intro-heading{margin-bottom:30px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px;line-height:15px;color:white;}
+}
+.btn-xl{padding:20px 40px;border-radius:2px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;}
+.shadow{-moz-box-shadow:inset 0 0 10px #000000;-webkit-box-shadow:inset 0 0 10px #000000;box-shadow:inset 0 0 10px #000000;}
+.header-fixed-top{position:fixed;right:0;left:0;}
+.page{background-attachment:scroll;}
+img.blur{width:367;height:459px;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);}
+.clickable{cursor:pointer;}
+.clickable .glyphicon{background:rgba(0, 0, 0, 0.15);display:inline-block;padding:6px 12px;border-radius:4px}
+.panel-heading span{margin-top:-23px;font-size:15px;margin-right:-9px;}
+a.clickable{color:inherit;}
+a.clickable:hover{text-decoration:none;}
+.wrap{position:relative;margin:0 auto;width:900px;}
+#header, #footer{width:100%;float:left;}
