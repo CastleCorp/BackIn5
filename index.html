@@ -1,6 +1,13 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
+        <script type="text/javascript">
+        $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+    });
+        </script>
+
         <meta charset="utf-8">
         <title>SAS: BackIn5</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,237 +69,151 @@
           <script src="js/vendor/html5shiv.js"></script>
           <script src="js/vendor/respond.min.js"></script>
           <![endif]-->
-          <style type="text/css">
-          body { height: 100%; overflow: hidden; }
 
-          #loading-screen {
-              background: #fff;
-              position: fixed;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              height: 100%;
-              width: 100%;
-              z-index: 999;
-          }
-
-          #loading-spinner-container {
-              width: 100px;
-              height: 100px;
-              position: absolute;
-              margin: 0 auto;
-          }
-
-          #loading-spinner {
-              width: 100%;
-              height: 100%;
-              background-color: #000;
-              border-radius: 100%;
-              -webkit-animation: scaleout 1.0s infinite ease-in-out;
-              animation: scaleout 1.0s infinite ease-in-out;
-          }
-
-          @-webkit-keyframes scaleout {
-              0% { -webkit-transform: scale(0.0) }
-              100% {
-                -webkit-transform: scale(1.0);
-                opacity: 0;
-            }
-        }
-
-        @keyframes scaleout {
-          0% {
-            transform: scale(0.0);
-            -webkit-transform: scale(0.0);
-            } 100% {
-                transform: scale(1.0);
-                -webkit-transform: scale(1.0);
-                opacity: 0;
-            }
+          <!-- Loading image -->
+          <style>
+          .no-js #loader { display: none;  }
+          .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+          .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
         }
         </style>
 
         <script type="text/javascript">
         $(window).load(function() {
-          $("#loading-spinner").fadeOut();
-          $('#loading-screen').delay(350).fadeOut('slow');
-          $('body').delay(350).css({'overflow':'visible'});
-      });
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");;
+        });
         </script>
+
     </head>
 
-    <div id="loading-screen">
-      <div id="loading-spinner-container">
-        <div id="loading-spinner"></div>
-    </div>
-</div>
+    <body id="page-top" class="index">
 
-<body id="page-top" class="index">
-  <!-- Navbar -->
-  <nav class="navbar navbar-inverse navbar-embossed navbar-fixed-top affix" data-spy="affix" role="navigation">
-    <div class="container">
-        <!-- Brand and navbar toggle grouped together for mobile compatibility -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">BackIn5</a>
-        </div>
+        <!-- Preloader -->
+        <div class="se-pre-con"></div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#sign-out" id="sign-out-btn" onClick="open_sign_out();">Sign out</a>
-                </li>
+        <!-- Navbar -->
+        <nav class="navbar navbar-inverse navbar-embossed navbar-fixed-top affix" data-spy="affix" role="navigation">
+            <div class="container">
+                <!-- Brand and navbar toggle grouped together for mobile compatibility -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">BackIn5</a>
+                </div>
 
-                <li>
-                    <a class="page-scroll" href="#sign-in" onClick="open_sign_in();">Sign in</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="./admin/">Teacher Login</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</nav>
-<!-- /.nav -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#sign-out" id="sign-out-btn" onClick="open_sign_out();">Sign out</a>
+                        </li>
 
-<!-- Header -->
-<div class="header-fixed-top"></div>
-<header>
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in tour-welcome" id="tour-1"><b>Welcome to BackIn5</b></div>
-            <div class="intro-heading">A simpler way to sign in and out when going off campus.</div>
-            <hr style="width:50%;">
-            <a href="#sign-out" class="page-scroll btn btn-inverse btn-xl">Get Started</a>
-        </div>
-    </div>
-</header>
-<!-- /.header -->
+                        <li>
+                            <a class="page-scroll" href="#sign-in" onClick="open_sign_in();">Sign in</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="./admin/">Teacher Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- /.nav -->
 
-</div>
-
-<!-- /.container -->
-<div class="container tour-welcome"></div>
-<!-- Sign out form -->
-<section id="sign-out">
-    <br>
-    <br>
-    <div class="container" style="padding-top:30px;">
-        <div class="row">
-            <div class="col-md-14">
-                <div class="panel panel-primary">
-                    <div class="panel-heading clickable tour-out" id="sign-out-heading">
-                        <h3 class="panel-title">
-                            Sign out</h3>
-                            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-                        </div>
-                        <div class="panel-body" id="sign-out-body">
-                            <div class="container">
-                                <div class="row" style="padding:7px;">
-                                    <div class="col-lg-12">
-                                        <form name="sign-out-form" id="signoutForm" onsubmit="signOutUser($('#outname').val(), $('#outemail').val(), $('#outphone').val(), $('#outdestination').val(), $('#outdepart').val(), $('#outreturn').val()); event.preventDefault();" validate>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="name">Name:</label>
-                                                        <input type="text" class="form-control" placeholder="Your Name *" id="outname" required data-validation-required-message="Please enter your name.">
-                                                        <p class="help-block text-danger"></p>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="email">Email:</label>
-                                                        <input type="email" class="form-control" placeholder="Your Email *" id="outemail" required data-validation-required-message="Please enter your email address.">
-                                                        <p class="help-block text-danger"></p>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="phone">Phone:</label>
-                                                        <input type="phone" class="form-control" placeholder="Your Phone Number *" id="outphone" required data-validation-required-message="Please enter your phone number.">
-                                                        <p class="help-block text-danger"></p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="depart">Departure Time:</label>
-                                                        <input type="time" class="form-control" placeholder="Your departure time *" id="outdepart" required data-validation-required-message="Please enter your departure time.">
-                                                        <p class="help-block text-danger"></p> 
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="destination">Destination:</label>
-                                                        <input type="text" class="form-control" placeholder="Your destination *" id="outdestination" required data-validation-required-message="Please enter your destination.">
-                                                        <p class="help-block text-danger"></p>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="return">Estimated Return Time:</label>
-                                                        <input type="time" class="form-control" placeholder="Your return time *" id="outreturn" required data-validation-required-message="Please enter your return time.">
-                                                        <p class="help-block text-danger"></p>
-                                                    </div>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <div class="col-lg-12 text-center">
-                                                    <div id="success"></div>
-                                                    <button type="submit" id="send" class="btn btn-xl btn-inverse tour-out-form">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Header -->
+        <div class="header-fixed-top"></div>
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in tour-welcome" id="tour-1"><b>Welcome to BackIn5</b></div>
+                    <div class="intro-heading">A simpler way to sign in and out when going off campus.</div>
+                    <hr style="width:50%;">
+                    <a href="#sign-out" class="page-scroll btn btn-inverse btn-xl">Get Started</a>
                 </div>
             </div>
-        </div>
-        <!-- /.sign out form -->
-        <!-- Sign in form -->
-        <section id="sign-in">
-            <br>
-            <div class="container" style="padding-top:30px;">
-                <div class="row">
-                    <div class="col-md-14">
-                        <div class="panel panel-success">
-                            <div class="panel-heading clickable tour-in" id="sign-in-heading">
-                                <h3 class="panel-title">
-                                    Sign in</h3>
-                                    <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-                                </div>
-                                <div class="panel-body" id="sign-in-body">
-                                    <div class="container">
-                                        <div class="row" style="padding:7px;">
-                                            <div class="col-lg-12">
-                                                <form name="sign-in-form" id="signinForm" onsubmit="signInUser($('#return_name').val(), $('#actual_return').val());" validate>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="name">Name:</label>
-                                                                <input type="text" class="form-control" placeholder="Your Name *" id="return_name" required data-validation-required-message="Please enter your name.">
-                                                                <p class="help-block text-danger"></p>
-                                                            </div>
+        </header>
+        <!-- /.header -->
+
+    </div>
+
+    <!-- /.container -->
+    <div class="container tour-welcome"></div>
+    <!-- Sign out form -->
+    <section id="sign-out">
+        <br>
+        <br>
+        <div class="container" style="padding-top:30px;">
+            <div class="row">
+                <div class="col-md-14">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading clickable tour-out" id="sign-out-heading">
+                            <h3 class="panel-title">
+                                Sign out</h3>
+                                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                            </div>
+                            <div class="panel-body" id="sign-out-body">
+                                <div class="container">
+                                    <div class="row" style="padding:7px;">
+                                        <div class="col-lg-12">
+                                            <form name="sign-out-form" id="signoutForm" onsubmit="signOutUser($('#outname').val(), $('#outemail').val(), $('#outphone').val(), $('#outdestination').val(), $('#outdepart').val(), $('#outreturn').val()); event.preventDefault();" validate>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="name">Name:</label>
+                                                            <input type="text" class="form-control" placeholder="Your Name *" id="outname" required data-validation-required-message="Please enter your name.">
+                                                            <p class="help-block text-danger"></p>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="return">Return Time:</label>
-                                                                <input type="time" class="form-control" placeholder="Your return time *" id="actual_return" required data-validation-required-message="Please enter your return time.">
-                                                                <p class="help-block text-danger"></p>
-                                                            </div>
+                                                        <div class="form-group">
+                                                            <label for="email">Email:</label>
+                                                            <input type="email" class="form-control" placeholder="Your Email *" id="outemail" required data-validation-required-message="Please enter your email address.">
+                                                            <p class="help-block text-danger"></p>
                                                         </div>
-                                                        <div class="clearfix"></div>
-                                                        <div class="col-lg-12 text-center">
-                                                            <div id="success"></div>
-                                                            <button type="submit" id="send" class="btn btn-xl btn-inverse">Submit</button>
+                                                        <div class="form-group">
+                                                            <label for="phone">Phone:</label>
+                                                            <input type="phone" class="form-control" placeholder="Your Phone Number *" id="outphone" required data-validation-required-message="Please enter your phone number.">
+                                                            <p class="help-block text-danger"></p>
                                                         </div>
                                                     </div>
-                                                </form>
-                                            </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="depart">Departure Time:</label>
+                                                            <input type="time" class="form-control" placeholder="Your departure time *" id="outdepart" required data-validation-required-message="Please enter your departure time.">
+                                                            <p class="help-block text-danger"></p> 
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="destination">Destination:</label>
+                                                            <input type="text" class="form-control" placeholder="Your destination *" id="outdestination" required data-validation-required-message="Please enter your destination.">
+                                                            <p class="help-block text-danger"></p>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="return">Estimated Return Time:</label>
+                                                            <input type="time" class="form-control" placeholder="Your return time *" id="outreturn" required data-validation-required-message="Please enter your return time.">
+                                                            <p class="help-block text-danger"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="col-lg-12 text-center">
+                                                        <div id="success"></div>
+                                                        <button type="submit" id="send" class="btn btn-xl btn-inverse tour-out-form">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -300,111 +221,160 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.sign in form -->
-            </section>
-            <!-- /.section -->
-            <br>
-            <br>
-            <br>
-
-            <footer id="footer">
-                <div class="container">
+            </div>
+            <!-- /.sign out form -->
+            <!-- Sign in form -->
+            <section id="sign-in">
+                <br>
+                <div class="container" style="padding-top:30px;">
                     <div class="row">
-                        <div class="col-xs-7">
-                            <h3 class="footer-title">Want more?</h3>
-                            <p>Like this site? Interested in how it works or helping add features? 
-
-                                <br>
-                                Take a look and fork it on <a href="http://github.com/castlecorp/BackIn5/">Github</a>!
-                            </p>
-
-                            <p class="pvl">
-                                <button type="button" class="btn btn-inverse btn-xl center pull-left"><a class="center" href="https://github.com/CastleCorp"style="display: block;"><i class="fa fa-github fa-3x pull-left" style="color:white; padding-right:10px;"></i><p style="color:white; padding-right:50px;" class="center">Follow Me<br> On Github</p></a></button>
-
-
-                                <button type="button" class="btn btn-primary btn-xl center" style="margin-left:20px;"><a class="center" href="https://linkedin.com/in/parkerthomas1"style="display: block;"><i class="fa fa-linkedin fa-3x pull-left" style="color:white; padding-right:10px;"></i><p style="color:white; padding-right:50px;" class="center">Parker Thomas<br> On LinkedIn</p></a></button>
-
-                            </p>
-
-                            <br>
-                            <br>
-                            <br>
-
-                            <p class="pvl">This site was made for use by St. Andrews School (DE) students. It was created by a student is completely opensource. You are encouraged to build off of this work, the only stipulation being that you link back to the <a href="http://github.com/castlecorp/BackIn5/">Github project</a>.</p>
-
-                            <br>
-                            <br>
-                            <br>
-                            <p></p>
-                            <p class="pvl copyright">BackIn5 by Parker Thomas, &copy; 2015</p>
-                        </div>
-
-                        <div class="col-xs-5">
-                            <div class="footer-banner" id="contact" style="padding-top:181px; padding-bottom:181px;">
-                                <h3 class="footer-title">Contact Me</h3>
-                                <ul>
-                                    <li><b>Parker Thomas</b></li>
-                                    <li><a href="mailto:pthomas@standrews-de.org">pthomas@standrews-de.org</a></li>
-                                    <li><a href="http://twitter.com/ParkerJThomas">@ParkerJThomas</a></li>
-                                    <li><a href="http://linkedin.com/in/parkerthomas1">Parker On LinkedIn</a></li>
-                                    <li><a href="http://github.com/castlecorp">CastleCorp on Github</a></li>
-                                </ul>
+                        <div class="col-md-14">
+                            <div class="panel panel-success">
+                                <div class="panel-heading clickable tour-in" id="sign-in-heading">
+                                    <h3 class="panel-title">
+                                        Sign in</h3>
+                                        <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+                                    </div>
+                                    <div class="panel-body" id="sign-in-body">
+                                        <div class="container">
+                                            <div class="row" style="padding:7px;">
+                                                <div class="col-lg-12">
+                                                    <form name="sign-in-form" id="signinForm" onsubmit="signInUser($('#return_name').val(), $('#actual_return').val());" validate>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="name">Name:</label>
+                                                                    <input type="text" class="form-control" placeholder="Your Name *" id="return_name" required data-validation-required-message="Please enter your name.">
+                                                                    <p class="help-block text-danger"></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="return">Return Time:</label>
+                                                                    <input type="time" class="form-control" placeholder="Your return time *" id="actual_return" required data-validation-required-message="Please enter your return time.">
+                                                                    <p class="help-block text-danger"></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <div class="col-lg-12 text-center">
+                                                                <div id="success"></div>
+                                                                <button type="submit" id="send" class="btn btn-xl btn-inverse">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </footer>
+                    <!-- /.sign in form -->
+                </section>
+                <!-- /.section -->
+                <br>
+                <br>
+                <br>
 
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            
-            <script type="text/javascript">
-            function open_sign_in() {
-                $('#sign-in-heading').click();
-            };
-            </script>
+                <footer id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-7">
+                                <h3 class="footer-title">Want more?</h3>
+                                <p>Like this site? Interested in how it works or helping add features? 
 
-            <script type="text/javascript">
-            function open_sign_out() {
-                $('#sign-out-heading').click();
-            };
-            </script>
+                                    <br>
+                                    Take a look and fork it on <a href="http://github.com/castlecorp/BackIn5/">Github</a>!
+                                </p>
 
-            <script type="text/javascript">
-            function signInUser(user_name, actual_returnTime) {
+                                <p class="pvl">
+                                    <button type="button" class="btn btn-inverse btn-xl center pull-left"><a class="center" href="https://github.com/CastleCorp"style="display: block;"><i class="fa fa-github fa-3x pull-left" style="color:white; padding-right:10px;"></i><p style="color:white; padding-right:50px;" class="center">Follow Me<br> On Github</p></a></button>
 
-                var signIn = new Parse.Object("SignIn");
-                var name = user_name;
-                var returnTime = actual_returnTime;
 
-                signIn.set("name", name);
-                signIn.set("returnTime", returnTime);
+                                    <button type="button" class="btn btn-primary btn-xl center" style="margin-left:20px;"><a class="center" href="https://linkedin.com/in/parkerthomas1"style="display: block;"><i class="fa fa-linkedin fa-3x pull-left" style="color:white; padding-right:10px;"></i><p style="color:white; padding-right:50px;" class="center">Parker Thomas<br> On LinkedIn</p></a></button>
 
-                signIn.save(null, {
-                    success: function(signIn) {
-                        var query = new Parse.Query("OffCampus");
-                        query.equalTo("name", name);
-                        query.find({
-                            success: function(results) {
-                                var object = results[0];
+                                </p>
 
-                                object.destroy({
-                                    success: function(object) {},
-                                    error: function(object, error) {
-                                        alert("Destroy object failed! " + error.message);
-                                    }
-                                });
-                            },
-                            error: function(object, error) {
-                                alert("Find object failed! " + error.message);
-                            },
-                        });
+                                <br>
+                                <br>
+                                <br>
 
-                        alert("Thanks, you're signed in!");
-                    },
-                    error: function(signIn, error) {
-                        alert("Sign in failed! " + error.message);
-                    }
-                });
+                                <p class="pvl">This site was made for use by St. Andrews School (DE) students. It was created by a student is completely opensource. You are encouraged to build off of this work, the only stipulation being that you link back to the <a href="http://github.com/castlecorp/BackIn5/">Github project</a>.</p>
+
+                                <br>
+                                <br>
+                                <br>
+                                <p></p>
+                                <p class="pvl copyright">BackIn5 by Parker Thomas, &copy; 2015</p>
+                            </div>
+
+                            <div class="col-xs-5">
+                                <div class="footer-banner" id="contact" style="padding-top:181px; padding-bottom:181px;">
+                                    <h3 class="footer-title">Contact Me</h3>
+                                    <ul>
+                                        <li><b>Parker Thomas</b></li>
+                                        <li><a href="mailto:pthomas@standrews-de.org">pthomas@standrews-de.org</a></li>
+                                        <li><a href="http://twitter.com/ParkerJThomas">@ParkerJThomas</a></li>
+                                        <li><a href="http://linkedin.com/in/parkerthomas1">Parker On LinkedIn</a></li>
+                                        <li><a href="http://github.com/castlecorp">CastleCorp on Github</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+                <script type="text/javascript">
+                function open_sign_in() {
+                    $('#sign-in-heading').click();
+                };
+                </script>
+
+                <script type="text/javascript">
+                function open_sign_out() {
+                    $('#sign-out-heading').click();
+                };
+                </script>
+
+                <script type="text/javascript">
+                function signInUser(user_name, actual_returnTime) {
+
+                    var signIn = new Parse.Object("SignIn");
+                    var name = user_name;
+                    var returnTime = actual_returnTime;
+
+                    signIn.set("name", name);
+                    signIn.set("returnTime", returnTime);
+
+                    signIn.save(null, {
+                        success: function(signIn) {
+                            var query = new Parse.Query("OffCampus");
+                            query.equalTo("name", name);
+                            query.find({
+                                success: function(results) {
+                                    var object = results[0];
+
+                                    object.destroy({
+                                        success: function(object) {},
+                                        error: function(object, error) {
+                                            alert("Destroy object failed! " + error.message);
+                                        }
+                                    });
+                                },
+                                error: function(object, error) {
+                                    alert("Find object failed! " + error.message);
+                                },
+                            });
+
+                            alert("Thanks, you're signed in!");
+                        },
+                        error: function(signIn, error) {
+                            alert("Sign in failed! " + error.message);
+                        }
+                    });
 
 }
 </script>
